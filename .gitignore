@@ -1,0 +1,22 @@
+# Maven
+/target/
+
+# IDEs
+/.idea/
+*.iml
+
+# logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# credentials
+/src/main/resources/application.properties
+
+# Backup and temporary
+*.tmp
+*~
+
+*application.properties

@@ -1,0 +1,44 @@
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #f5f7fb, #e8eef8);
+}
+
+.app-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b4d77;
+}
+
+.app-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #446688;
+}
+
+.tile {
+    -fx-min-width: 160px;
+    -fx-min-height: 120px;
+    -fx-background-color: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0.0, 0, 2);
+    -fx-font-size: 16px;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+    -fx-padding: 12px;
+}
+
+.tile:hover {
+    -fx-cursor: hand;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.button {
+    -fx-background-color: #2b4d77;
+    -fx-text-fill: #ffffff;
+}
+
+.table-view {
+    -fx-background-color: white;
+}

@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS pag_rec;
+USE pag_rec;
+
+CREATE TABLE IF NOT EXISTS clientes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  documento VARCHAR(100) UNIQUE,
+  email VARCHAR(255)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS contas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  descricao VARCHAR(255) NOT NULL,
+  valor DECIMAL(15,2) NOT NULL,
+  tipo ENUM('PAGAR','RECEBER') NOT NULL,
+  cliente_id INT,
+  FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS movimentacao (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  conta_id INT NOT NULL,
+  data DATE NOT NULL,
+  acao ENUM('PAGAR','RECEBER') NOT NULL,
+  valor DECIMAL(15,2) NOT NULL,
+  observacao TEXT,
+  FOREIGN KEY (conta_id) REFERENCES contas(id)
+) ENGINE=InnoDB;
+

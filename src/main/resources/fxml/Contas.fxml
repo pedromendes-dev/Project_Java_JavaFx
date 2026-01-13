@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controller.ContasController" prefWidth="600" prefHeight="400">
+    <children>
+        <VBox spacing="8" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Label text="Cadastro de Contas" style="-fx-font-size:16px; -fx-font-weight:bold;" HBox.hgrow="ALWAYS"/>
+                <Button text="Voltar" onAction="#onVoltar"/>
+            </HBox>
+            <GridPane hgap="8" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="120"/>
+                    <ColumnConstraints minWidth="300" hgrow="ALWAYS"/>
+                </columnConstraints>
+                <Label text="Descrição:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfDescricao" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Valor:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfValor" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Tipo:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ChoiceBox fx:id="cbTipo" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Cliente (opcional):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ChoiceBox fx:id="cbCliente" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Button text="Incluir" onAction="#onIncluir"/>
+                <Button text="Alterar" onAction="#onAlterar"/>
+                <Button text="Excluir" onAction="#onExcluir"/>
+            </HBox>
+
+            <TableView fx:id="tableContas" prefHeight="200" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="ID" fx:id="colId" prefWidth="60"/>
+                    <TableColumn text="Descrição" fx:id="colDescricao" prefWidth="220"/>
+                    <TableColumn text="Valor" fx:id="colValor" prefWidth="120"/>
+                    <TableColumn text="Tipo" fx:id="colTipo" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controller.ClientesController" prefWidth="600" prefHeight="400">
+    <children>
+        <VBox spacing="8" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Label text="Cadastro de Clientes" style="-fx-font-size:16px; -fx-font-weight:bold;" HBox.hgrow="ALWAYS"/>
+                <Button text="Voltar" onAction="#onVoltar"/>
+            </HBox>
+            <GridPane hgap="8" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                    <ColumnConstraints minWidth="300" hgrow="ALWAYS"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="30"/>
+                    <RowConstraints minHeight="30"/>
+                    <RowConstraints minHeight="30"/>
+                </rowConstraints>
+                <Label text="Nome:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfNome" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Documento:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfDocumento" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfEmail" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Button text="Incluir" onAction="#onIncluir"/>
+                <Button text="Alterar" onAction="#onAlterar"/>
+                <Button text="Excluir" onAction="#onExcluir"/>
+            </HBox>
+
+            <TableView fx:id="tableClientes" prefHeight="200" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="ID" fx:id="colId" prefWidth="60"/>
+                    <TableColumn text="Nome" fx:id="colNome" prefWidth="200"/>
+                    <TableColumn text="Documento" fx:id="colDocumento" prefWidth="140"/>
+                    <TableColumn text="Email" fx:id="colEmail" prefWidth="180"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</AnchorPane>
